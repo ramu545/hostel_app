@@ -1,0 +1,41 @@
+<table class="container-fluid">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Address</td>
+            <td>Phone Number</td>
+            <td>Mail</td>
+            <td> Upload Aadhar </td>
+            <td> Upoad Pan </td>
+            <td>Rent</td>
+            <td><button type="button" class="btn btn-primary" (click)="addTanent()">Add Tanent</button></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tanents of tanentsData">
+            <td>
+                {{tanents.Name}}
+            </td>
+            <td>
+                {{tanents.address}}
+            </td>
+            <td>
+                {{tanents.phone}}
+            </td>
+            <td>
+                {{tanents.mail}}
+            </td>
+            <td>
+                {{tanents.aadhar}}
+            </td>
+            <td>
+                {{tanents.pan}}
+            </td>
+            <td>
+                {{tanents.rent}}
+            </td>
+            <td>edit</td>
+            <td>delete</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-heading">
+            <h2 class="text-center">Registration</h2>
+        </div>
+        <hr />
+        <div class="modal-body">
+            <form action="" role="form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                        </span>
+                        <input type="text" class="form-control" [(ngModel)]="registerdata.fname" name="fname" placeholder="First Name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                        </span>
+                        <input type="text" class="form-control" [(ngModel)]="registerdata.lname" name="lname" placeholder="Last Name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                        </span>
+                        <input type="email" class="form-control" [(ngModel)]="registerdata.email" name="email" placeholder="Email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                        <input type="password" class="form-control" [(ngModel)]="registerdata.password" name="password" placeholder="Password" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                        <input type="password" class="form-control" [(ngModel)]="registerdata.confirmpassword" name="confirmpassword" placeholder="Confirm Password" />
+
+                    </div>
+                </div>
+
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" (click)="userregistration()">Register</button>
+
+            </form>
+        </div>
+    </div>
+</div>

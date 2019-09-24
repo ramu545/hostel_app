@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="btn-group dropright">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      Dropright
+    </button>
+    <div class="dropdown-menu">
+      <form id="floore_form">
+        <input type="number" [(ngModel)]="flooresNumber" name="flooresNumber">
+        <button type="submit" (click)="addingFlooreCount(flooresNumber)">Add</button>
+      </form>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div style="display:flex;">
+    <div class="col-lg-10 col-md -10">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" *ngFor="let floore of flooredata; let i = index">
+          <a class="nav-link" href="#profile" role="tab" data-toggle="tab">Floore NO : {{floore.floorenumber}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-2 col-md-2">
+      <input type="search" name="" id="" placeholder="search">
+    </div>
+  </div>
+  <br />
+
+
+
+</div>

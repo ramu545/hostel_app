@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <form>
+
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Name" name="name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Address" name="address">
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col">
+                <input type="number" class="form-control" placeholder="Mobile number" name="phone">
+            </div>
+            <div class="col">
+                <input type="email" class="form-control" placeholder="Email ID" name="email">
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col">
+                <input type="file" class="form-control" placeholder="Upload Aadhar" name="aadhar">
+            </div>
+            <div class="col">
+                <input type="file" class="form-control" placeholder="Upload PanCard" name="pan">
+            </div>
+        </div><br />
+        <div class="row"> 
+            <button type="button" class="btn btn-success" (click)="tanentAdded()">Submit</button>
+        </div>
+    </form>
+</div>
