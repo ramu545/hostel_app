@@ -35,6 +35,7 @@ import { AddnewComponent } from './addnew/addnew.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

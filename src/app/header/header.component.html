@@ -21,8 +21,8 @@
       </ul>
     </div>
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" (click)="register($event)" value="register">Register</button>&nbsp;
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="login($event)" value="login">Login</button>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="logOut($event)" value="login">logout</button>
+      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" *ngIf='(!this.authserve.logedIn())' routerLink="/register">Register</button>&nbsp;
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" *ngIf='(!this.authserve.logedIn())' routerLink="/login">Login</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" *ngIf='(this.authserve.logedIn())' (click)="authserve.logOut()">logout</button>
     </form>
   </nav><br />

@@ -5,52 +5,51 @@
         </div>
         <hr />
         <div class="modal-body">
-            <form action="" role="form">
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-user"></span>
-                        </span>
-                        <input type="text" class="form-control" [(ngModel)]="registerdata.fname" name="fname" placeholder="First Name" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-user"></span>
-                        </span>
-                        <input type="text" class="form-control" [(ngModel)]="registerdata.lname" name="lname" placeholder="Last Name" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-user"></span>
-                        </span>
-                        <input type="email" class="form-control" [(ngModel)]="registerdata.email" name="email" placeholder="Email" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-                        </span>
-                        <input type="password" class="form-control" [(ngModel)]="registerdata.password" name="password" placeholder="Password" />
 
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                
+                <div class="form-group">
+                    <label>Fname</label>
+                    <input type="text" formControlName="fname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }"/>
+                    <div *ngIf="f.submitted && fname.invalid" class="invalid-feedback">
+                        <div *ngIf="fname.errors.required">First Name is required</div>
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-                        </span>
-                        <input type="password" class="form-control" [(ngModel)]="registerdata.confirmpassword" name="confirmpassword" placeholder="Confirm Password" />
-
+                    <label>Lname</label>
+                    <input type="text" formControlName="lname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" />
+                    <div *ngIf="f.submitted && lname.invalid" class="invalid-feedback">
+                        <div *ngIf="lname.errors.required">Last Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" formControlName="confirmpassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmpassword.errors }" />
+                    <div *ngIf="submitted && f.confirmpassword.errors" class="invalid-feedback">
+                        <div *ngIf="f.confirmpassword.errors.required">Confirm Password is required</div>
+                        <div *ngIf="f.confirmpassword.errors.minlength">Confirm Password must be at least 6 characters</div>
                     </div>
                 </div>
 
-                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" (click)="userregistration()">Register</button>
+                <div class="form-group text-center">
+                    <button [disabled]="registerForm.pristine" class="btn btn-primary">Register</button>
+                </div>
 
             </form>
         </div>

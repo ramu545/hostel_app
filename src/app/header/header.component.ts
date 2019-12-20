@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,25 +8,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _router: Router) { }
+  public loginUserName;
+
+  constructor(public authserve:AuthService) { }
 
   ngOnInit() {
-  }
-
-  register(event: Event){
-    event.preventDefault();
-    // console.log(event.target["value"]);
-    this._router.navigate(['/'+event.target["value"]]);
-  }
-
-  login(event: Event){
-    event.preventDefault();
-    this._router.navigate(['/'+event.target["value"]]);
-  }
-
-  logOut(event: Event){
-    event.preventDefault();
-    this._router.navigate(['/'+event.target["value"]]);
+    
   }
 
 }

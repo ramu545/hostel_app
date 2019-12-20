@@ -23,10 +23,9 @@ export class AuthService {
     return this._http.post<any>(this.loginrurl,user);
   }
   
-  public loggedIn():boolean{
+  public logedIn():boolean{
     var tokenl = localStorage.getItem('jwt-token');
     var tokens = sessionStorage.getItem('jwt-token');
-
     if(tokenl || tokens){
       return true;
     }
